@@ -8,9 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 
 import Header from "./header"
 import "./layout.css"
+import { Typography } from "@material-ui/core";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +29,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6">PJT Development</Typography>
+          <Typography>Services</Typography>
+          <Typography>Solutions</Typography>
+          <Typography>Collective</Typography>
+          <Typography>Contact</Typography>
+        </Toolbar>
+      </AppBar>
       <div
         style={{
           margin: `0 auto`,
